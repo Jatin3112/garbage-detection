@@ -1,0 +1,7 @@
+numpy==1.19.5
+pandas==1.2.3
+opencv-python==4.5.1.48
+opencv_python-headless==4.7.0.72
+tqdm==4.59.0
+streamlit==0.89.0
+matplotlib==3.3.4
