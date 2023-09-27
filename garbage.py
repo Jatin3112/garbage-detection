@@ -5,7 +5,7 @@ from keras.models import load_model
 
 model = load_model('Garbage_MOdel.h5')
 
-labels = ["battery", "biological", "brown_glass", "cardboard", "clothes", "green_glass", "metal", "paper", "plastic", "shoes", "trash", "white_glass"]
+labels = ["Metal","White Glass","Biological","Green Glass","Paper","Battery","Trash","Cardboard","Shoes","Brown Glass", "Clothes","Plastic"]
 
 st.title('Garbage Classification')
 st.markdown('Upload Image')
