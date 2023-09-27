@@ -19,14 +19,10 @@ if submit:
 
         st.image(opencv_image, channels="BGR")
         opencv_image = cv2.resize(opencv_image, (224, 224))
-        opencv_image.shape = (1, 224, 224, 3)
+        opencv_image = np.expand_dims(opencv_image, axis=0)  # Add batch dimension
         Y_pred = model.predict(opencv_image)
-        ypred1 = np.round(Y_pred)
-        ypred1 = np.asarray(ypred1, dtype='int')
-        
-        # Get the predicted label based on the index
-        predicted_label_index = ypred1[0]
-        
+        predicted_label_index = np.argmax(Y_pred)  # Get the index with the highest prediction value
+
         if 0 <= predicted_label_index < len(labels):
             predict = labels[predicted_label_index]
         else:
